@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap');
+
+:root {
+  --primary-bg: #000000;
+  --card-bg: #ffeaff;
+  --color-text-1: #ffffff;
+  --color-text-2: #0f0e15;
+  --font-primary: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--primary-bg);
+  color: var(--color-text-1);
+  font-family: var(--font-primary);
+}
+
+/* Hero section styling */
+.hero {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 20vh;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: clamp(1.5rem, 4vw + 1rem, 5.2rem);
+  text-align: center;
+  padding-top: 42px;
+  background: linear-gradient(50deg, #3877f4 17.5%, #cb86f4 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: clamp(1.5rem, 2.5vw + 0.7rem, 2.5rem);
+}
+
+section.projects {
+  margin-top: 70vh;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  font-size: 32px;
+  background: var(--color-text-1);
+  padding: 4rem;
+  color: var(--color-text-2);
+  z-index: 1;
+  position: relative;
+  min-height: 100vh;
+}
+
+@media screen and (max-width: 600px) {
+  section.projects {
+    padding: 1.8rem;
+  }
+}
+
+.projects-title,
+.categorize {
+  display: flex;
+  align-items: center;
+}
+
+.projects-title {
+  margin-top: 2rem;
+  width: 90%;
+  margin-inline: auto;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.categorize {
+  margin-left: auto;
+  justify-content: space-between;
+  gap: 1.6rem;
+  background-color: var(--color-text-2);
+  padding: 0.89rem 1rem;
+  border-radius: 20px;
+  position: relative;
+}
+
+.categorize img {
+  width: 24px;
+  height: 24px;
+  z-index: 2;
+}
+
+.toggle {
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 10px;
+  z-index: 2;
+  transition: background 0.3s;
+}
+
+.active {
+  position: absolute;
+  top: 50%;
+  left: 9%;
+  height: 60%;
+  width: 35%;
+  background: var(--light-gray, #444);
+  border-radius: 10px;
+  z-index: 1;
+  transform: translateY(-50%);
+  transition: left 0.3s ease;
+}
