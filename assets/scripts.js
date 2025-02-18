@@ -64,23 +64,21 @@ async function fetchData() {
   const res = await fetch('http://localhost:3000/assets/data.json');
   const data = await res.json();
   data.forEach(data => {
-    const html = `
-    <a href="http://localhost:3000/${data.id}-${data.name
+    const titleString = data.name
       .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join('-')}/">
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1));
+    const html = `
+    <a href="http://localhost:3000/${data.id}-${titleString.join('-')}/">
       <div class="card">
         <div class="card-img">
           <img src="./assets/images/${data.id}.png" alt="${data.name}" />
         </div>
         <div class="card-info">
-          <h3 class="card-title">${data.name}</h3>
+          <h3 class="card-title">${titleString.join(' ')}</h3>
         </div>
       </div>
     </a>
     `;
-
-    console.log();
 
     cardContainer.insertAdjacentHTML('beforeend', html);
   });

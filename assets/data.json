@@ -38,5 +38,85 @@
   {
     "id": 10,
     "name": "hold shift and check boxes"
+  },
+  {
+    "id": 11,
+    "name": "custom video player"
+  },
+  {
+    "id": 12,
+    "name": "key sequence detection"
+  },
+  {
+    "id": 13,
+    "name": "slide in on scroll"
+  },
+  {
+    "id": 14,
+    "name": "javascript reference vs copying"
+  },
+  {
+    "id": 15,
+    "name": "localStorage"
+  },
+  {
+    "id": 16,
+    "name": "mouse move shadow"
+  },
+  {
+    "id": 17,
+    "name": "sort without articles"
+  },
+  {
+    "id": 18,
+    "name": "adding up times with reduce"
+  },
+  {
+    "id": 19,
+    "name": "webcam fun"
+  },
+  {
+    "id": 20,
+    "name": "speech detection"
+  },
+  {
+    "id": 21,
+    "name": "geolocation"
+  },
+  {
+    "id": 22,
+    "name": "follow along link highlighter"
+  },
+  {
+    "id": 23,
+    "name": "speech synthesis"
+  },
+  {
+    "id": 24,
+    "name": "sticky nav"
+  },
+  {
+    "id": 25,
+    "name": "event capture, propagation, bubbling & once"
+  },
+  {
+    "id": 26,
+    "name": "stripe follow along nav"
+  },
+  {
+    "id": 27,
+    "name": "click & drag"
+  },
+  {
+    "id": 28,
+    "name": "video speed controller"
+  },
+  {
+    "id": 29,
+    "name": "countdown timer"
+  },
+  {
+    "id": 30,
+    "name": "whack a mole"
   }
 ]
