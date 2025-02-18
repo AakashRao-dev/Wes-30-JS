@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="https://fav.farm/⏰" type="image/x-icon" />
+    <script src="./scripts.js" defer></script>
+    <title>02 - CSS & JS Clock</title>
+  </head>
+  <body>
+    <h1>CSS & JavaScript Clock</h1>
+
+    <div class="switch">
+      <input type="radio" id="analog" name="mode" checked />
+      <label for="analog" class="toggle">Analog</label>
+
+      <input type="radio" id="digital" name="mode" />
+      <label for="digital" class="toggle">Digital</label>
+
+      <div class="active"></div>
+    </div>
+
+    <div class="analog-clock">
+      <div class="number-circle">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span>7</span>
+        <span>8</span>
+        <span>9</span>
+        <span>10</span>
+        <span>11</span>
+        <span>12</span>
+      </div>
+      <div class="hand-circle">
+        <div class="hand hour-hand"></div>
+        <div class="hand minute-hand"></div>
+        <div class="hand second-hand"></div>
+      </div>
+    </div>
+
+    <div class="digital-clock"></div>
+  </body>
+</html>

@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200..1000&display=swap');
+
+:root {
+  --black: #0c0a0d;
+  --white: #f0eef2;
+  --light-gray: #cfcfcf;
+  --yellow: #f1aa22;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito Sans', serif;
+  background-color: var(--black);
+  color: var(--white);
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: clamp(3rem, 3vw + 1rem, 5rem);
+  padding-top: 5rem;
+  text-align: center;
+}
+
+.switch {
+  margin: 5rem auto 0;
+  max-width: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #999;
+  padding: 0.89rem 1rem;
+  border-radius: 10px;
+  position: relative;
+  gap: 1rem;
+}
+
+/* Hide the radio buttons */
+input[type='radio'] {
+  display: none;
+}
+
+.toggle {
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 10px;
+  z-index: 2;
+  font-size: 2rem;
+  text-align: center;
+  width: 50%;
+  transition: color 0.3s;
+  position: relative;
+}
+
+/* Active Background */
+.active {
+  position: absolute;
+  top: 50%;
+  left: 8.5%;
+  height: 60%;
+  width: 35%;
+  background: #333;
+  border-radius: 5px;
+  z-index: 1;
+  transform: translateY(-50%);
+  transition: left 0.3s ease;
+}
+
+/* Move the active background based on :checked state */
+.switch:has(#digital:checked) .active {
+  left: 56.5%;
+}
+
+.analog-clock {
+  width: 400px;
+  aspect-ratio: 1;
+  border: 2px solid var(--white);
+  border-radius: 100%;
+  margin: 7rem auto 0;
+  position: relative;
+}
+
+.number-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-60deg);
+}
+
+.number-circle span {
+  position: absolute;
+  font-size: 2.2rem;
+  color: var(--white);
+  font-weight: 400;
+  transform-origin: center center;
+  transition: transform 0.3s ease;
+}
+
+.number-circle span:nth-child(1) {
+  transform: rotate(0deg) translateX(160px) rotate(60deg);
+}
+.number-circle span:nth-child(2) {
+  transform: rotate(30deg) translateX(160px) rotate(30deg);
+}
+.number-circle span:nth-child(3) {
+  transform: rotate(60deg) translateX(160px) rotate(0deg);
+}
+.number-circle span:nth-child(4) {
+  transform: rotate(90deg) translateX(160px) rotate(-30deg);
+}
+.number-circle span:nth-child(5) {
+  transform: rotate(120deg) translateX(160px) rotate(-60deg);
+}
+.number-circle span:nth-child(6) {
+  transform: rotate(150deg) translateX(160px) rotate(-90deg);
+}
+.number-circle span:nth-child(7) {
+  transform: rotate(180deg) translateX(160px) rotate(-120deg);
+}
+.number-circle span:nth-child(8) {
+  transform: rotate(210deg) translateX(160px) rotate(-150deg);
+}
+.number-circle span:nth-child(9) {
+  transform: rotate(240deg) translateX(160px) rotate(-180deg);
+}
+.number-circle span:nth-child(10) {
+  transform: rotate(270deg) translateX(160px) rotate(-210deg);
+}
+.number-circle span:nth-child(11) {
+  transform: rotate(300deg) translateX(160px) rotate(-240deg);
+}
+.number-circle span:nth-child(12) {
+  transform: rotate(330deg) translateX(160px) rotate(-270deg);
+}
+
+.hand-circle {
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px);
+  position: relative;
+}
+
+.hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0%;
+  transform: rotate(-90deg);
+  background: var(--light-gray);
+  border-radius: 20px;
+  transition: all 0.5s;
+}
+
+.hand-circle::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--yellow);
+  z-index: 1;
+  box-shadow: 0 0 32px rgba(255, 255, 255, 0.4);
+}
+
+.hour-hand {
+  width: 32%;
+  height: 8px;
+}
+
+.minute-hand {
+  width: 45%;
+  height: 6px;
+}
+
+.second-hand {
+  width: 45%;
+  height: 2px;
+  background-color: var(--yellow);
+  transition-timing-function: cubic-bezier(0.12, 2.7, 0.45, 0.98);
+}
