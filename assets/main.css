@@ -32,7 +32,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  padding-bottom: 20vh;
+  padding-bottom: 10vh;
 }
 
 h1 {
@@ -40,7 +40,7 @@ h1 {
   font-size: clamp(1.5rem, 4vw + 1rem, 5.2rem);
   text-align: center;
   padding-top: 42px;
-  background: linear-gradient(50deg, #3877f4 17.5%, #cb86f4 80%);
+  background: linear-gradient(to right, #d53369, #cbad6d);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -52,10 +52,9 @@ h2 {
 }
 
 section.projects {
-  margin-top: 70vh;
+  margin-top: calc(70vh + 10vh);
   border-top-left-radius: 100px;
   border-top-right-radius: 100px;
-  font-size: 32px;
   background: var(--color-text-1);
   padding: 4rem;
   color: var(--color-text-2);
@@ -103,6 +102,10 @@ img {
   z-index: 2;
 }
 
+a {
+  text-decoration: none;
+}
+
 .toggle {
   cursor: pointer;
   padding: 0.5rem;
@@ -122,4 +125,48 @@ img {
   z-index: 1;
   transform: translateY(-50%);
   transition: left 0.3s ease;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 6rem;
+}
+
+.cards-container.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.cards-container.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.card {
+  max-width: 300px;
+  color: var(--color-text-2);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 300ms ease-in;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.cards-container:has(.card:hover) .card:not(:hover) {
+  transform: scale(0.9);
+  opacity: 0.4;
+}
+
+.card-title {
+  font-size: 1.6rem;
+  font-weight: 300;
+  padding: 1rem 0;
 }

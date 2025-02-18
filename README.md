@@ -1,7 +1,5 @@
 # JavaScript-30 By WesBos
 
-> JavaScript 30 Challenge, but with slightly different approach - I will be building my own versions Includes notes, solutions, UI designed on Figma with added features
-
 ## Projects
 
 | No. | Title                                       | Live Links |
