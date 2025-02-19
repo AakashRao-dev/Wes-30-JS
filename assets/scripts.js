@@ -71,28 +71,31 @@ async function fetchData() {
       'https://raw.githubusercontent.com/AakashRao-dev/Wes-30-JS/refs/heads/main/assets/data.json'
     );
   }
+
   const data = await res.json();
+
   data.forEach(data => {
-    const titleString = data.name
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1));
     const baseUrl =
       window.location.hostname === 'localhost'
         ? '..'
         : 'https://aakashrao-dev.github.io/Wes-30-JS';
-    const html = `
-    <a href="${baseUrl}/${data.id}-${titleString.join('-')}/">
+
+    const html = `<a href="${baseUrl}/${data.id}-${data.name
+      .split(' ')
+      .join('-')}/">
       <div class="card">
         <div class="card-img">
           <img src="./assets/images/${data.id}.png" alt="${data.name}" />
         </div>
         <div class="card-info">
-          <h3 class="card-title">${titleString.join(' ')}</h3>
+          <h3 class="card-title">${data.name
+            .split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ')}</h3>
         </div>
       </div>
     </a>
     `;
-
     cardContainer.insertAdjacentHTML('beforeend', html);
   });
 
