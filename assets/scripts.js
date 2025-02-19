@@ -61,7 +61,16 @@ window.addEventListener('scroll', function () {
 
 // CARD CONTENT
 async function fetchData() {
-  const res = await fetch('../assets/data.json');
+  let res;
+  try {
+    res = await fetch('../assets/data.json');
+    if (!res.ok) throw new Errorr('Local fetch failed');
+  } catch (error) {
+    console.warn('Fetching local JSON failed, trying Github raw URL...');
+    res = await fetch(
+      'https://raw.githubusercontent.com/AakashRao-dev/Wes-30-JS/refs/heads/main/assets/data.json'
+    );
+  }
   const data = await res.json();
   data.forEach(data => {
     const titleString = data.name
