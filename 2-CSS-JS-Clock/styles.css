@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Orbitron:wght@400..900&display=swap');
 
 :root {
   --black: #0c0a0d;
@@ -81,7 +81,7 @@ input[type='radio'] {
 }
 
 .analog-clock {
-  width: 400px;
+  max-width: 400px;
   aspect-ratio: 1;
   border: 2px solid var(--white);
   border-radius: 100%;
@@ -97,6 +97,12 @@ input[type='radio'] {
   justify-content: center;
   align-items: center;
   transform: rotate(-60deg);
+}
+
+@media screen and (max-width: 600px) {
+  .number-circle {
+    display: none;
+  }
 }
 
 .number-circle span {
@@ -179,7 +185,7 @@ input[type='radio'] {
 
 .hour-hand {
   width: 32%;
-  height: 8px;
+  height: 10px;
 }
 
 .minute-hand {
@@ -192,4 +198,48 @@ input[type='radio'] {
   height: 2px;
   background-color: var(--yellow);
   transition-timing-function: cubic-bezier(0.12, 2.7, 0.45, 0.98);
+}
+
+.digital-clock {
+  display: none;
+  max-width: 900px;
+  height: 300px;
+  margin: 7rem auto 0;
+  font-family: 'Orbitron', serif;
+  font-variant-numeric: tabular-nums;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  border: 14px groove var(--light-gray);
+}
+
+.digital-time {
+  font-size: clamp(2rem, 4vw + 1rem, 12rem);
+  width: 12ch;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.digital-meridiem {
+  font-size: clamp(2rem, 2vw + 1rem, 7rem);
+}
+
+.digital-day {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.colon {
+  animation: blink 0.35s infinite alternate;
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.2;
+  }
 }

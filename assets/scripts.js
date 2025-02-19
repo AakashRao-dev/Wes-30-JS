@@ -61,14 +61,14 @@ window.addEventListener('scroll', function () {
 
 // CARD CONTENT
 async function fetchData() {
-  const res = await fetch('http://localhost:3000/assets/data.json');
+  const res = await fetch('../assets/data.json');
   const data = await res.json();
   data.forEach(data => {
     const titleString = data.name
       .split(' ')
       .map(word => word.charAt(0).toUpperCase() + word.slice(1));
     const html = `
-    <a href="http://localhost:3000/${data.id}-${titleString.join('-')}/">
+    <a href="../${data.id}-${titleString.join('-')}/">
       <div class="card">
         <div class="card-img">
           <img src="./assets/images/${data.id}.png" alt="${data.name}" />
