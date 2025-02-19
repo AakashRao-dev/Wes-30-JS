@@ -76,8 +76,12 @@ async function fetchData() {
     const titleString = data.name
       .split(' ')
       .map(word => word.charAt(0).toUpperCase() + word.slice(1));
+    const baseUrl =
+      window.location.hostname === 'localhost'
+        ? '..'
+        : 'https://aakashrao-dev.github.io/Wes-30-JS';
     const html = `
-    <a href="../${data.id}-${titleString.join('-')}/">
+    <a href="${baseUrl}/${data.id}-${titleString.join('-')}/">
       <div class="card">
         <div class="card-img">
           <img src="./assets/images/${data.id}.png" alt="${data.name}" />
